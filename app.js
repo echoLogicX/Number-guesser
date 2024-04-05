@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const restartButton = document.getElementById("restartButton");
     const checkButton = document.getElementById("checkButton");
     const feedback = document.getElementById("feedback");
     let rand = Math.floor(Math.random()*100)+1;
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         guesses.textContent = "";
         inputField.disabled = false;
         checkButton.disabled = false;
+        restartButton.style.visibility = "hidden";
     }
     if(noOfGuesses>=0){
     checkButton.addEventListener("click", () => {
@@ -45,7 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 inputField.disabled=true;
                 checkButton.disabled=true;
                 feedback.textContent="Sorry! you've run out of guesses"
+                restartButton.style.visibility = "visible";
             }
         }
     });}
+    restartButton.addEventListener("click", () => {
+            reset();
+    });
 });

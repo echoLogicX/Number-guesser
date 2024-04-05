@@ -21,7 +21,7 @@ body
 {
     margin-top: 150px;
 }
-#checkButton
+button
 {
     background-color:#904f3db1;
     color: white;
@@ -38,4 +38,8 @@ input[type=number]
 {
     padding: 12px 12px;
     box-sizing: border-box;
+}
+#restartButton
+{
+    visibility: hidden;
 }
