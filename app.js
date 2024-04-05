@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let rand = Math.floor(Math.random()*100)+1;
     let noOfGuesses = 5;
     let guesses = document.getElementById("guesses");
+    const inputField = document.getElementById("guess");
+    let flag = false;
 
     function reset()
     {
@@ -11,11 +13,16 @@ document.addEventListener("DOMContentLoaded", () => {
         rand = Math.floor(Math.random()*100)+1;
         noOfGuesses = 5;
         guesses.textContent = "";
+        inputField.disabled = false;
+        checkButton.disabled = false;
     }
+    if(noOfGuesses>=0){
     checkButton.addEventListener("click", () => {
-        const inputField = document.getElementById("guess");
+
+        
         if(noOfGuesses>0)
         {
+            noOfGuesses-=1;
             let inputVal = inputField.value;
     
             if(inputVal<rand)
@@ -31,14 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
             else
             {
                 feedback.textContent = "Yay! you guessed it right!";
-                reset();
+                flag = true;
             }
-            noOfGuesses-=1;
+            if(flag==false && noOfGuesses==0)
+            {
+                inputField.disabled=true;
+                checkButton.disabled=true;
+                feedback.textContent="Sorry! you've run out of guesses"
+            }
         }
-        else
-        {
-            feedback.textContent = "Sorry! you've ran out of guesses"
-        
-        }
-    });
+    });}
 });
