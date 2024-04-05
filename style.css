@@ -10,6 +10,7 @@ body
     align-content: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 1px;
 }
 .header
 {

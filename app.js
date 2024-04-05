@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let noOfGuesses = 5;
     let guesses = document.getElementById("guesses");
     const inputField = document.getElementById("guess");
+    let guessCount = document.getElementById("guessCount");
     let flag = false;
 
     function reset()
@@ -21,12 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if(noOfGuesses>=0){
     checkButton.addEventListener("click", () => {
 
-        
+        guessCount.textContent = "GUESS: "+ (6-noOfGuesses);
         if(noOfGuesses>0)
         {
             noOfGuesses-=1;
             let inputVal = inputField.value;
-    
+            
             if(inputVal<rand)
             {
                 feedback.textContent = "Guess too low";
@@ -41,6 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
             {
                 feedback.textContent = "Yay! you guessed it right!";
                 flag = true;
+                inputField.disabled=true;
+                checkButton.disabled=true;
+                restartButton.style.visibility = "visible";
             }
             if(flag==false && noOfGuesses==0)
             {
@@ -52,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });}
     restartButton.addEventListener("click", () => {
+        guessCount.textContent = "GUESS: "+ 1;
             reset();
     });
 });
