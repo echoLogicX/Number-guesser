@@ -1,0 +1,40 @@
+body
+{
+    
+    background-color: burlywood;
+}
+.container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.header
+{
+    margin-top: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+.content
+{
+    margin-top: 150px;
+}
+#checkButton
+{
+    background-color:#904f3db1;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 15px;
+}
+p
+{
+    font-size: 24px;
+    font-weight: 200;
+}
+input[type=number]
+{
+    padding: 12px 12px;
+    box-sizing: border-box;
+}

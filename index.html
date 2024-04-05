@@ -2,14 +2,19 @@
 <html>
     <head>
         <title>Number Guessing Game</title>
+        <link rel="stylesheet" href="style.css">
         <script src="app.js"></script>
     </head>
     <body>
-        <h3>Number Guesser</h3>
-        <p>The number is between 1 to 100</p>
-        <input type="number" id="guess" placeholder="Enter a number">
-        <button type="button" id="checkButton">Check</button>
-        <p id="guesses"></p>
-        <p id="feedback"></p>
+        <div class = "container">
+            <div class = "header"><h1>Number Guesser</h1></div>
+            <div class = "content">
+                <p>The number is between 1 to 100</p>
+                <input type="number" id="guess" placeholder="Enter a number">
+                <button type="button" id="checkButton">Check</button>
+                <p id="guesses"></p>
+                <p id="feedback"></p>
+            </div>
+        </div>
     </body>
 </html>
